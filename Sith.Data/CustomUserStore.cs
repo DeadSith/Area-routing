@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿// Copyright 2017 Vasylyk Andriy
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Sith.Data.Models;

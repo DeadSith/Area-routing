@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿// Copyright 2017 Vasylyk Andriy
+using Microsoft.AspNetCore.Hosting;
 using System.IO;
 
 namespace Sith.Main

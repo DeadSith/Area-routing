@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿// Copyright 2017 Vasylyk Andriy
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Sith.Data.Models

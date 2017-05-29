@@ -1,0 +1,13 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
+// Copyright 2017 Vasylyk Andriy
+extensions: .aspx .ascx
+<%-- 
+Copyright 2017 Vasylyk Andriy
+--%>
+extensions: .vb
+'Copyright 2017 Vasylyk Andriy
+extensions:  .xml .config .xsd
+<!--
+Copyright 2017 Vasylyk Andriy
+-->

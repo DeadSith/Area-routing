@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿// Copyright 2017 Vasylyk Andriy
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -35,8 +36,8 @@ namespace Sith.Main
             services.AddDbContext<GeneralDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<GeneralDbContext>()
-                .AddUserStore<CustomUserStore>();
+                .AddEntityFrameworkStores<GeneralDbContext>();
+                //.AddUserStore<CustomUserStore>();
             services.AddMvc();
             services.Configure<IdentityOptions>(options =>
             {
@@ -53,11 +54,18 @@ namespace Sith.Main
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
 
-            app.Run(async (context) =>
+            app.UseStaticFiles();
+
+            app.UseIdentity();
+
+            app.UseMvc(routes =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

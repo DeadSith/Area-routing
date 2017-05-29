@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// Copyright 2017 Vasylyk Andriy
+using System.ComponentModel.DataAnnotations;
 
 namespace Sith.Data.Models
 {
