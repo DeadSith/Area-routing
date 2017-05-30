@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Default\" />
     <Folder Include="Controllers\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>

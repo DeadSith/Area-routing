@@ -5,8 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Sith.Main.Vpn.Controllers
+namespace Sith.Main.Controllers
 {
+    [Area("Vpn")]
     public class HomeController : Controller
     {
         public IActionResult Index()

@@ -44,10 +44,11 @@ namespace Sith.Main
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireDigit = false;
             });
+            services.AddSingleton<AreaRouter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, AreaRouter areaRouter)
         {
             loggerFactory.AddConsole();
 
@@ -63,6 +64,8 @@ namespace Sith.Main
 
             app.UseMvc(routes =>
             {
+                routes.DefaultHandler = areaRouter;
+                routes.MapRoute("areaRoute", "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
